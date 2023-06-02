@@ -6,7 +6,6 @@ const Home = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    if (localStorage.getItem("Data") == "null") {
       console.log("Data from server API");
       const fetchData = async () => {
         try {
@@ -22,11 +21,7 @@ const Home = () => {
       };
       fetchData();
       localStorage.setItem("Data", JSON.stringify(data));
-    } else {
-      console.log("Data from localStorage");
-      const Data = localStorage.getItem("Data");
-      setData(JSON.parse(Data));
-    }
+      
   }, []);
   return (
     <div className="movies-home">

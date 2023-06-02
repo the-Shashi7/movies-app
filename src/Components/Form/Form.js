@@ -2,6 +2,9 @@ import React from "react";
 import './Form.css';
 import { useLocation } from "react-router-dom";
 export default function Form() {
+  const submitHandler=()=>{
+    window.alert('submitted');
+  }
   const location = useLocation();
   const Data = location.state;
   return (
@@ -10,7 +13,7 @@ export default function Form() {
         <h1  >Movies name : {Data.show.name}</h1>
         <h1>Released Date : {Data.show.premiered}</h1>
         <h1>Show Time : {Data.show.schedule.time}</h1>
-        <button className="btn">FINAL BOOKING TICKET</button>
+        <button className="btn" onClick={submitHandler} >FINAL BOOKING TICKET</button>
       </div>
     </div>
   );

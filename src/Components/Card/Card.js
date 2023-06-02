@@ -27,8 +27,8 @@ export default function Card({ Data }) {
           </span>
           <span style={{ fontSize: "18px" }} className="timming">
             Show Time : {Data.show.schedule.time}{" "}
-            {Data.show.schedule.days.map((e) => (
-              <ul>{e}</ul>
+            {Data.show.schedule.days.map((e,key) => (
+              <ul key={key} >{e}</ul>
             ))}
           </span>
         </div>
